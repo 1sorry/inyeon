@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.inyeon.main.mapper.VoucherMapper">
+    <select id="voucherSelectAll" parameterType="com.example.inyeon.main.dto.VoucherDTO" resultType="com.example.inyeon.main.dto.VoucherDTO">
+        select a.ctprvn_cd as ctprvn_cd,
+               a.ctprvn_nm as ctprvn_nm,
+               a.signgu_cd as signgu_cd,
+               a.signgu_nm as signgu_nm,
+               a.fclty_nm as fclty_nm,
+               a.rprsntv_tel_no as rprsntv_tel_no,
+               a.zip_no as zip_no,
+               a.fclty_addr as fclty_addr,
+               a.fclty_detail_addr as fclty_detail_addr,
+               a.main_item_cd as main_item_cd,
+               a.main_item_nm as main_item_nm,
+               a.fclty_crdnt_lo as fclty_crdnt_lo,
+               a.fclty_crdnt_la as fclty_crdnt_la,
+               a.course_flag_cd as course_flag_cd
+        from sportsvoucher a
+        <if test="ctprvn_nm != null and main_item_nm == null">
+            where a.ctprvn_nm = #{ctprvn_nm}
+        </if>
+        <if test="ctprvn_nm == null and main_item_nm != null">
+            where a.main_item_nm = #{main_item_nm}
+        </if>
+        <if test="ctprvn_nm != null and main_item_nm != null">
+            where a.main_item_nm = #{main_item_nm}
+            and a.ctprvn_nm = #{ctprvn_nm}
+        </if>
+        order by a.ctprvn_cd , a.signgu_nm
+        limit 15 offset(#{page} - 1) * 15
+
+    </select>
+
+    <select id="voucherCount" parameterType="com.example.inyeon.main.dto.VoucherDTO" resultType="int">
+        select count(*) from sportsvoucher
+        <if test="ctprvn_nm != null and main_item_nm == null">
+            where ctprvn_nm = #{ctprvn_nm}
+        </if>
+        <if test="ctprvn_nm == null and main_item_nm != null">
+            where main_item_nm = #{main_item_nm}
+        </if>
+        <if test="ctprvn_nm != null and main_item_nm != null">
+            where main_item_nm = #{main_item_nm}
+            and ctprvn_nm = #{ctprvn_nm}
+        </if>
+        <if test="keyword != null">
+            where main_item_nm = #{keyword}
+            or ctprvn_nm = #{keyword}
+        </if>
+    </select>
+
+    <select id="voucherSelect" parameterType="com.example.inyeon.main.dto.VoucherDTO" resultType="com.example.inyeon.main.dto.VoucherDTO">
+        select a.ctprvn_cd as ctprvn_cd,
+               a.ctprvn_nm as ctprvn_nm,
+               a.signgu_cd as signgu_cd,
+               a.signgu_nm as signgu_nm,
+               a.fclty_nm as fclty_nm,
+               a.rprsntv_tel_no as rprsntv_tel_no,
+               a.zip_no as zip_no,
+               a.fclty_addr as fclty_addr,
+               a.fclty_detail_addr as fclty_detail_addr,
+               a.main_item_cd as main_item_cd,
+               a.main_item_nm as main_item_nm,
+               a.fclty_crdnt_lo as fclty_crdnt_lo,
+               a.fclty_crdnt_la as fclty_crdnt_la,
+               a.course_flag_cd as course_flag_cd
+        from sportsvoucher a where a.fclty_nm = #{fclty_nm}
+    </select>
+
+    <!-- 검색 -->
+    <select id="voucherSearch" parameterType="com.example.inyeon.main.dto.VoucherDTO" resultType="com.example.inyeon.main.dto.VoucherDTO">
+        select
+            a.ctprvn_nm,
+            a.signgu_nm,
+            a.fclty_nm,
+            a.rprsntv_tel_no,
+            a.fclty_addr,
+            a.fclty_detail_addr,
+            a.main_item_nm,
+            b.ctprvn_cd
+        from sportsvoucher a join citycode b on b.ctprvn_nm = a.ctprvn_nm
+        where a.main_item_nm = #{keyword}
+           or a.ctprvn_nm = #{keyword}
+        order by b.ctprvn_cd , a.signgu_nm
+            limit 15 offset (#{page} - 1) * 15
+    </select>
+    <select id="sportsclassName" resultType="com.example.inyeon.main.dto.VoucherDTO">
+        select a.ctprvn_nm, a.main_item_nm
+        from sportsvoucher a
+        order by a.ctprvn_cd, a.main_item_nm
+
+    </select>
+
+</mapper>

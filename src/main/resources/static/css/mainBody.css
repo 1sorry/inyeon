@@ -1,0 +1,160 @@
+/* 전체 배경색 */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-color: #e6f0ff;
+}
+/* main 세팅 */
+main {
+    margin: auto;
+    background: #fdfdfe;
+    width: 1080px;
+    min-height: 950px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    border-left: 1px solid #d3d5d7;
+    border-right: 1px solid #d3d5d7;
+}
+.main_container{
+    margin: auto;
+    display: grid;
+    grid-template-rows: 30px, 1fr;
+    gap : 30px;
+}
+.search{
+    display: flex;
+    align-items: center;
+    border: 1px solid #d3d5d7;
+    border-radius: 8px;
+    background-color: #ffffff;
+}
+.search > select{
+    border: none;
+    font-size: 20px;
+    margin-left: 20px;
+    margin-right: 15px;
+    background-color: #ffffff;
+    outline: none;
+}
+#search_box{
+    flex: 1;
+    width: 70%;
+    margin-left : 10px;
+    padding: 20px 12px;
+    font-size: 20px;
+    border-right: none;
+    border-top: none;
+    border-bottom: none;
+    border-left: 1px solid #d3d5d7;
+    outline: none;
+    background-color: #ffffff;
+    text-align: center;
+}
+#search_icon{
+    width: 30px;
+    margin-left: 15px;
+    margin-right: 15px;
+    cursor: pointer;
+}
+.botton_container{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin: auto;
+}
+/* 강좌이용권 시설정보 버튼 */
+#sportvoucher_div{
+    border: 1px solid #d3d5d7;
+    display:grid;
+    grid-template-rows: 30px, 1fr;
+    gap: 10px;
+    background-color:#d3d5d7;
+    border-radius: 20px 20px 25px 25px;
+}
+#sportvoucher_div:hover{
+    cursor:pointer;
+}
+#voucher_title{
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+}
+#voucher_image{
+    background-image: url(../img/voucher_icon.png);
+    background-color: darkgray;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 300px;
+    height: 300px;
+    border-radius: 0px 0px 20px 20px;
+}
+#voucher_image:hover{
+    background-color: #66ccff;
+}
+/* 생활체육 교실 버튼 */
+#sportclass_div{
+    border: 1px solid #d3d5d7;
+    display:grid;
+    grid-template-rows: 30px, 1fr;
+    gap: 10px;
+    background-color:#d3d5d7;
+    border-radius: 20px 20px 25px 25px;
+
+}
+#sportclass_div:hover{
+    cursor:pointer;
+}
+#class_title{
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+}
+#class_image{
+    background-image: url(../img/class_icon.png);
+    background-color: darkgray;
+    background-size: 270px 270px;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 300px;
+    height: 300px;
+    border-radius: 0px 0px 20px 20px;
+}
+#class_image:hover{
+    background-color: #66ccff;
+}
+/* 생활체육 동호회 버튼 */
+#sportclub_div{
+    border: 1px solid #d3d5d7;
+    display:grid;
+    grid-template-rows: 30px, 1fr;
+    gap: 10px;
+    background-color:#d3d5d7;
+    border-radius: 20px 20px 25px 25px;
+}
+#sportclub_div:hover{
+    cursor: pointer;
+}
+#club_title{
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+}
+#club_image{
+    background-image: url(../img/club_icon.png);
+    background-color: darkgray;
+    background-size: 300px 300px;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 300px;
+    height: 300px;
+    border-radius: 0px 0px 20px 20px;
+}
+#club_image:hover{
+    background-color: #66ccff;
+}

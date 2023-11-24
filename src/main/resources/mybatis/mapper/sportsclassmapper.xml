@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.inyeon.main.mapper.SportsclassMapper">
+    <select id="sportsclassSelectAll" parameterType="com.example.inyeon.main.dto.SportsclassDTO" resultType="com.example.inyeon.main.dto.SportsclassDTO">
+        select a.item_nm as item_nm,
+        a.subitem_nm as subitem_nm,
+        a.ctprvn_nm as ctprvn_nm,
+        b.ctprvn_cd as ctprvn_cd,
+        a.signgu_nm as signgu_nm,
+        a.clssrm_nm as clssrm_nm
+        from sportsclass a join citycode b on b.ctprvn_nm = a.ctprvn_nm
+        <if test="ctprvn_nm != null and item_nm == null">
+            where a.ctprvn_nm = #{ctprvn_nm}
+        </if>
+        <if test="ctprvn_nm == null and item_nm != null">
+            where a.item_nm = #{item_nm}
+        </if>
+        <if test="ctprvn_nm != null and item_nm != null">
+            where a.item_nm = #{item_nm}
+            and a.ctprvn_nm = #{ctprvn_nm}
+        </if>
+        order by b.ctprvn_cd , a.signgu_nm
+        limit 15 offset(#{page} - 1) * 15
+    </select>
+
+    <select id="sportsclassCount" parameterType="com.example.inyeon.main.dto.SportsclassDTO" resultType="int">
+        select count(*) from sportsclass
+        <if test="ctprvn_nm != null and item_nm == null">
+            where ctprvn_nm = #{ctprvn_nm}
+        </if>
+        <if test="ctprvn_nm == null and item_nm != null">
+            where item_nm = #{item_nm}
+        </if>
+        <if test="ctprvn_nm != null and item_nm != null">
+            where item_nm = #{item_nm}
+            and ctprvn_nm = #{ctprvn_nm}
+        </if>
+        <if test="keyword != null">
+            where item_nm = #{keyword}
+            or ctprvn_nm = #{keyword}
+        </if>
+    </select>
+
+    <select id="sportsclassName" resultType="com.example.inyeon.main.dto.SportsclassDTO">
+        select a.ctprvn_nm, a.item_nm
+        from sportsclass a join citycode b on a.ctprvn_nm = b.ctprvn_nm
+        order by b.ctprvn_cd, a.item_nm
+    </select>
+
+    <select id="sportsclassSelect" parameterType="com.example.inyeon.main.dto.SportsclassDTO" resultType="com.example.inyeon.main.dto.SportsclassDTO">
+        select * from sportsclass where clssrm_nm = #{clssrm_nm}
+    </select>
+
+    <select id="classSearch" parameterType="com.example.inyeon.main.dto.SportsclassDTO" resultType="com.example.inyeon.main.dto.SportsclassDTO">
+        select
+            a.item_nm
+             ,a.subitem_nm
+             ,a.ctprvn_nm
+             ,a.signgu_nm
+             ,a.clssrm_nm
+             ,b.ctprvn_cd
+        from sportsclass a join citycode b on b.ctprvn_nm = a.ctprvn_nm
+        where a.item_nm = #{keyword}
+           or a.ctprvn_nm = #{keyword}
+        order by b.ctprvn_cd , a.signgu_nm
+            limit 15 offset (#{page} - 1) * 15
+    </select>
+
+</mapper>

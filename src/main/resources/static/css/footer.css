@@ -1,0 +1,95 @@
+
+/* footer 세팅 */
+footer {
+    margin: auto;
+    padding: 0 0 0 0; /* 상 우 하 좌 */
+    background: #f5f6f7;
+    width: 1080px;
+    height: 150px;
+    display: flex;
+    flex-direction: column; /* 요소들 수평정렬 */
+    font-size: 12px;
+    border-left: 1px solid #d3d5d7;
+    border-right: 1px solid #d3d5d7;
+}
+ul { /* ul의 하위요소(li) 수평정렬을 위해 기본마진, 패딩 제거 */
+    margin: 0;
+    padding: 0;
+
+}
+.notice_box {
+    flex: 1;
+    display: flex;
+    justify-content: space-between; /* 양끝 정렬 */
+    align-items: center;
+    border-top: 1px solid #d3d5d7;
+    border-bottom: 1px solid #d3d5d7;
+    padding: 0 0 0 15px;
+    height: 30px;
+}
+
+.aside_box {
+    flex: 2;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #d3d5d7;
+}
+.area_user{
+    flex: 4;
+    line-height: 2em; /* 줄간격 */
+    padding: 0 0 0 15px;
+}
+.area_user_row {
+    display: flex;
+}
+.area_user_row span {
+    flex: 1;
+}
+.area_user_row ul {
+    flex: 6;
+}
+.area_user_row ul > li {
+    display: inline-block; /* 수평정렬 */
+    margin-left: 8px;
+    font-size: 13px;
+}
+.text_bold-13 {
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.area_col {
+    flex: 1;
+    display: flex;
+    height: 100px;
+    align-items: center;
+}
+.area_col .ac_content {
+    line-height: 20px;
+    width: 130px;
+    padding: 0 0 0 15px;
+}
+.area_col .ac_img {
+    width: 150px;
+    height: 60px;
+}
+.area_col .ac_img2 {
+    padding: 0 0 0 15px;
+    width: 180px;
+    height: 50px;
+}
+
+.footer_title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.ac_link {
+    font-size: 13px;
+}
+
+.before_list::before{
+    content: "| \00a0";
+    color: #d3d5d7;
+    font-weight: bold;
+}

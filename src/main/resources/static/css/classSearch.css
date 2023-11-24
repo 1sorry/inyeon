@@ -1,0 +1,133 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #e6f0ff;
+}
+main {
+    margin: auto;
+    background: #fdfdfe;
+    width: 1080px;
+    min-height: 950px;
+    align-items: start;
+    position: relative;
+    border-left: 1px solid #d3d5d7;
+    border-right: 1px solid #d3d5d7;
+    display: flex;
+    justify-content: center;
+}
+select {
+    border: 2px solid #d3d5d7;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 17px;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #fdfdfe;
+    outline: none;
+}
+.space_fix {
+    margin-top: 65px;
+}
+table {
+    border-top: 2px solid #d3d5d7;
+    border-bottom: 2px solid #d3d5d7;
+    border-spacing: 0;
+    border-collapse: separate;
+}
+tr {
+    height: 50px;
+    padding: 0;
+}
+td {
+    padding: 0;
+}
+.class_title { /* tr */
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #ccf2ff;
+    text-align: center;
+}
+.class_title_1 {
+    width: 119px;
+    border-right: 1px solid #d3d5d7;
+}
+.class_title_2 {
+    width: 74px;
+    border-right: 1px solid #d3d5d7;
+}
+.class_title_3 {
+    width: 410px;
+}
+
+.column1 {
+    width: 119px;
+    text-align: center;
+    font-weight: bold;
+    background-color: #e6f9ff;
+    border-top: 1px solid #d3d5d7;
+    border-right: 1px solid #d3d5d7;
+}
+.column2 {
+    width: 119px;
+    border-top: 1px solid #d3d5d7;
+    text-align: center;
+    border-right: 1px solid #d3d5d7;
+}
+.column3 {
+    width: 74px;
+    border-top: 1px solid #d3d5d7;
+    text-align: center;
+    border-right: 1px solid #d3d5d7;
+}
+.classname {
+    width: 400px;
+    border-top: 1px solid #d3d5d7;
+    padding-left: 10px;
+}
+.classname:hover {
+    cursor: pointer;
+    background-color: #e6f9ff;
+}
+.voucher_intro {
+    text-align: center;
+    font-weight: bold;
+    font-size: 17px;
+    background-color: #e6f9ff;
+}
+.back_button {
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-end;
+}
+#All{
+    border: none;
+    background-color: transparent;
+    font-size: 20px;
+    cursor: pointer;
+}
+.back{
+    width:25px;
+}
+
+/* 페이지 버튼 */
+.ul_container {
+    margin-top: 5px;
+    display:flex;
+    justify-content: flex-end;
+}
+.paging > span > a {
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.paging > span > a:visited {
+    color: black;
+}
+.paging > span > a.current-page {
+    font-size: 19px;
+    color: #0066ff; /* 현재 페이지를 강조하는 색상으로 설정 */
+}

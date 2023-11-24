@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+
+    <!-- 파일정보 -->
+    <Properties>
+        <Property name="layoutPattern">{%d{UTF-8} %highlight{%-5level} [{%t}]
+            {%C}{%L}:%msg%n%throwable
+        </Property>
+    </Properties>
+
+    <Appenders>
+        <Console name="Console_Appender" target="SYSTEM_OUT">
+            <PatternLayout pattern="${layoutPattern}"/>
+        </Console>
+
+    </Appenders>
+
+    <!-- 로그 범위  -->
+    <Loggers>
+        <!-- Spring 관련 로그  -->
+        <Logger name="org.springframework" additivity="false" level="INFO">
+            <AppenderRef ref="Console_Appender"/>
+        </Logger>
+
+        <!-- 프로젝트 로그 -->
+        <logger name="com.example" additivity="false" level="DEBUG">
+            <AppenderRef ref="Console_Appender"/>
+        </logger>
+
+        <!-- Default 세팅 -->
+        <root additivity="false" level="OFF">
+            <AppenderRef ref="Console_Appender"/>
+        </root>
+    </Loggers>
+</Configuration>

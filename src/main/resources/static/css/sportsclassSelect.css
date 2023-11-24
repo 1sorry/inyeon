@@ -1,0 +1,81 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #e6f0ff;
+}
+main {
+    margin: auto;
+    background: #fdfdfe;
+    width: 1080px;
+    min-height: 950px;
+    align-items: start;
+    position: relative;
+    border-left: 1px solid #d3d5d7;
+    border-right: 1px solid #d3d5d7;
+    display: flex;
+    justify-content: center;
+}
+.space_fix {
+    margin-top: 65px;
+}
+table {
+    border-top: 2px solid #d3d5d7;
+    border-bottom: 2px solid #d3d5d7;
+    border-spacing: 0px;
+    border-collapse: separate;
+}
+tr {
+    height: 50px;
+    padding: 0;
+}
+td {
+    padding: 0;
+}
+.club_title {
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #ccf2ff;
+}
+.column1 {
+    width: 149px;
+    text-align: center;
+    font-weight: bold;
+    background-color: #e6f9ff;
+    border-top: 1px solid #d3d5d7;
+    border-right: 1px solid #d3d5d7;
+}
+.column2 {
+    width: 630px;
+    border-top: 1px solid #d3d5d7;
+    padding-left: 20px;
+}
+.class_intro {
+    text-align: center;
+    font-weight: bold;
+    font-size: 17px;
+    background-color: #e6f9ff;
+    border-top: 1px solid #d3d5d7;
+    border-bottom: 1px solid #d3d5d7;
+}
+.class_intro_text {
+    text-align: center;
+    font-size: 17px;
+    height: 200px;
+    width: 760px;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+.back_button {
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-end;
+}
+#All{
+    border: none;
+    background-color: transparent;
+    font-size: 20px;
+    cursor: pointer;
+}
+.back{
+    width:25px;
+}

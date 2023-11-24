@@ -1,0 +1,17 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #e6f0ff;
+}
+main {
+    margin: auto;
+    background: #fdfdfe;
+    width: 1080px;
+    min-height: 950px;
+    align-items: start;
+    position: relative;
+    border-left: 1px solid #d3d5d7;
+    border-right: 1px solid #d3d5d7;
+    display: flex;
+    justify-content: center;
+}
